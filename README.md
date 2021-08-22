@@ -9,6 +9,7 @@ Cryptodate is a website that everyone can use to invest easily into the Cryptocu
 3. Realtime rates of Top Cryptocurrencies
 4. Bitcoin Calculator
 5. Latest Cryptocurrency News
+6. Graphical View of CryptoCurrencies
 
 All these and more in just one single place!!
 
