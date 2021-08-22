@@ -18,123 +18,6 @@
 
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
-
-    <style>
-    /* TEAM MEMBERS */
-    .team-section {
-        background: #f3f7f9;
-        overflow: hidden;
-    }
-
-    .team-members {
-        margin: 0 -10px;
-    }
-
-    .member {
-        background: #fff;
-        width: calc(20% - 25px);
-        display: inline-block;
-        margin: 0 10px;
-        text-align: center;
-        padding: 50px 10px;
-        -webkit-box-shadow: 1px 1px 1px rgba(33, 54, 61, 0.15);
-        box-shadow: 1px 1px 1px rgba(33, 54, 61, 0.15);
-        border-radius: 10px;
-        position: relative;
-    }
-
-    .member h2 {
-        font-size: 22px;
-        margin-bottom: 5px;
-    }
-
-    .member span {
-        font-size: 14px;
-        color: #75849a;
-        display: block;
-    }
-
-    .member .member-text {
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-        opacity: 1;
-    }
-
-    .member:hover {
-        -webkit-box-shadow: 1px 14px 43px rgba(33, 54, 61, 0.15);
-        box-shadow: 1px 14px 43px rgba(33, 54, 61, 0.15);
-    }
-
-    .member:hover .member-info {
-        opacity: 1;
-    }
-
-    .member:hover .member-text {
-        opacity: 0;
-    }
-
-    .member-img {
-        width: 230px;
-        height: 230px;
-        display: inline-block;
-        border-radius: 50%;
-        margin-bottom: 25px;
-    }
-
-    .member-social {
-        padding-top: 25px;
-        background: #fff;
-        position: relative;
-        z-index: 2;
-    }
-
-    .member-social a {
-        width: 50px;
-        height: 50px;
-        display: inline-block;
-        border-radius: 50%;
-        background: #cbd3df;
-        color: #fff;
-        padding-top: 13px;
-        margin: 0 8px;
-    }
-
-    .member-meta {
-        padding-left: 85px;
-    }
-
-    .member-info {
-        padding: 50px 60px 10px;
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        text-align: left;
-        opacity: 0;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-        height: 380px;
-        overflow-y: auto;
-    }
-
-    .member-info p {
-        display: block;
-        padding-top: 25px;
-        margin-bottom: 0;
-    }
-
-    .member-img.mf {
-        width: 60px;
-        height: 60px;
-        opacity: 1;
-        float: left;
-        margin-bottom: 0;
-    }
-
-    /* // TEAM MEMBERS */
-    </style>
 </head>
 
 <body class="bg-black" style="font-family: oswald;">
@@ -143,34 +26,7 @@
     <section class="bg-scroll"
         style="z-index: 0; background-image: url(assets/img/bitcoinbg.jpeg); background-position: 50% 50%; overflow: hidden;">
         <!-- HEADER -->
-        <header class="text-gray-600 body-font bg-transparent" style="background-color: transparent;">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-
-                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="index.php">
-                    <img src="assets/img/logo.png" style="height: 100px; width: 200px">
-                </a>
-                <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-white">
-                    <a class="mr-5 hover:text-yellow-400 cursor-pointer" style="color: inherit;"
-                        href="index.php#hero">Home</a>
-                    <a class="mr-5 hover:text-yellow-400 cursor-pointer" style="color: inherit;"
-                        href="index.php#rates">Rates</a>
-                    <a class="mr-5 hover:text-yellow-400 cursor-pointer" style="color: inherit;"
-                        href="index.php#calculator">Coin Calculator</a>
-                    <a class="mr-5 hover:text-yellow-400 cursor-pointer" style="color: inherit;"
-                        href="index.php#team">Team</a>
-                </nav>
-                <a href="login.php" style="text-decoration: none; color: inherit;">
-                    <button
-                        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-                        id="login">Sign In
-                </a>
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-                </button>
-            </div>
-        </header>
+        <?php include('app/includes/header.php'); ?>
         <!-- // HEADER -->
 
         <!-- HERO -->
@@ -185,6 +41,16 @@
                         cryptocurrency market. New investors will often find themselves scrambling to figure out what to
                         do, but no longer. We present: CryptoDate, the All In One Cryptocurrency app that contains
                         anything one might need for investing, be they a new or veteran investor.</p>
+                    <?php if(isset($_SESSION['email'])): ?>
+
+                    <div class="flex justify-center">
+                        <a href="admin/dashboard.php"><button
+                                class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+                                Go to Dashboard
+                            </button>
+                        </a>
+                    </div>
+                    <?php else: ?>
                     <div class="flex justify-center">
                         <a href="login.php"><button
                                 class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Sign
@@ -193,6 +59,7 @@
                             class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Register
                             Now</button>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                 </div>
@@ -301,9 +168,23 @@
 
                 </div>
             </div>
-            <button
-                class="flex mx-auto mt-20 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Get
-                Started</button>
+
+            <?php if(isset($_SESSION['email'])): ?>
+            <a href="admin/dashboard.php">
+                <button
+                    class="flex mx-auto mt-20 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+                    Dashboard
+                </button>
+            </a>
+
+            <?php else: ?>
+            <a href="register.php">
+                <button
+                    class="flex mx-auto mt-20 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+                    Get Started
+                </button>
+            </a>
+            <?php endif; ?>
         </div>
     </section>
 
@@ -494,61 +375,6 @@
 
     <!-- FOOTER -->
     <footer class="text-white body-font bg-gray-800">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-wrap md:text-left text-center order-first">
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                        </li>
-                    </nav>
-                </div>
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                        </li>
-                    </nav>
-                </div>
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                        </li>
-                    </nav>
-                </div>
-            </div>
-        </div>
         <div class="bg-gray-900">
             <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
                 <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -557,11 +383,9 @@
                         class="w-10 h-10 text-white p-2 bg-yellow-500 rounded-full" viewBox="0 0 24 24">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                     </svg>
-                    <span class="ml-3 text-xl">Tailblocks</span>
+                    <span class="ml-3 text-xl">Cryptodate</span>
                 </a>
-                <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Tailblocks —
-                    <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1"
-                        target="_blank">@knyttneve</a>
+                <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2021 Cryptodate
                 </p>
                 <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                     <a class="text-gray-500">
