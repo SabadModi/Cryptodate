@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="assets/css/members.css" />
 </head>
 
 <body class="bg-black" style="font-family: oswald;">
